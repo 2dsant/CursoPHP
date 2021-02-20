@@ -1,0 +1,25 @@
+<?php
+
+// spl_autoload_register(function($class){
+//     if(file_exists($class . ".php")){
+//         require_once($class . ".php");
+//     }
+// });
+function incluirClasses($nomeClasse)
+{
+    if(file_exists($nomeClasse . ".php")){
+        require_once($nomeClasse . ".php");
+    }
+}
+
+spl_autoload_register("incluirClasses");
+
+spl_autoload_register(function($nomeClasse){
+    if(file_exists("Abstratas" . DIRECTORY_SEPARATOR . $nomeClasse . ".php")){
+        require_once("Abstratas" . DIRECTORY_SEPARATOR . $nomeClasse . ".php");
+    }
+});
+
+
+$carro = new DelRey();
+$carro->acelerar(80);
