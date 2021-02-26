@@ -11,3 +11,5 @@ $cad->setEmail("2dsant3@gmail.com");
 $cad->setSenha("123456789");
 
 $cad->registrarVenda();
+
+
